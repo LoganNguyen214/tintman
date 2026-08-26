@@ -36,6 +36,72 @@ const whyUs = [
   },
 ];
 
+const pricing = [
+  { vehicle: "Coupe / Sedan", carbon: "$150", ceramic: "$250" },
+  { vehicle: "SUV / Crossover", carbon: "$200", ceramic: "$325" },
+  { vehicle: "Truck / Van", carbon: "$225", ceramic: "$350" },
+  { vehicle: "Windshield (add-on)", carbon: "$100", ceramic: "$150" },
+];
+
+const gallery = [
+  "Front doors, ceramic",
+  "Full car, carbon",
+  "Windshield strip",
+  "SUV rear quarters",
+  "Truck full package",
+  "Sedan side profile",
+];
+
+// Placeholder testimonials — swap for real Google Business Profile reviews.
+const reviews = [
+  {
+    name: "Jordan M.",
+    vehicle: "Civic",
+    quote:
+      "Clean install, no bubbles, and they matched the shade I asked for exactly. In and out in an hour.",
+  },
+  {
+    name: "Priya S.",
+    vehicle: "RAV4",
+    quote:
+      "Cabin is noticeably cooler on hot days. Booked online and they got me in the same week.",
+  },
+  {
+    name: "Marcus T.",
+    vehicle: "F-150",
+    quote:
+      "Second vehicle I've had done here. Warranty work on my last car was handled with zero hassle.",
+  },
+];
+
+const faqs = [
+  {
+    question: "How long does a tint job take?",
+    answer:
+      "Most sedans and SUVs take one to two hours. Full vehicle packages or windshields can take a bit longer — we'll give you a time estimate with your quote.",
+  },
+  {
+    question: "What tint darkness is legal in my state?",
+    answer:
+      "Legal limits vary by state. Let us know your state and vehicle when you book and we'll recommend shades that stay within local regulations.",
+  },
+  {
+    question: "How soon can I roll my windows down after installation?",
+    answer:
+      "Wait at least 3-4 days before rolling your windows down so the film has time to fully cure and adhere.",
+  },
+  {
+    question: "What's the difference between carbon and ceramic film?",
+    answer:
+      "Carbon film blocks glare and heat at a lower price point. Ceramic film rejects significantly more heat and UV without any signal interference, for a higher cost.",
+  },
+  {
+    question: "Do you offer a warranty?",
+    answer:
+      "Yes — every install includes a lifetime warranty against bubbling, peeling, and fading for as long as you own the vehicle.",
+  },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-zinc-50 font-sans dark:bg-black">
@@ -44,12 +110,21 @@ export default function Home() {
           <span className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
             TintMan
           </span>
-          <nav className="hidden gap-8 text-sm font-medium text-zinc-600 dark:text-zinc-400 sm:flex">
+          <nav className="hidden gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400 lg:flex">
             <a href="#services" className="hover:text-zinc-950 dark:hover:text-zinc-50">
               Services
             </a>
-            <a href="#why-us" className="hover:text-zinc-950 dark:hover:text-zinc-50">
-              Why Us
+            <a href="#pricing" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+              Pricing
+            </a>
+            <a href="#gallery" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+              Gallery
+            </a>
+            <a href="#reviews" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+              Reviews
+            </a>
+            <a href="#faq" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+              FAQ
             </a>
             <a href="#contact" className="hover:text-zinc-950 dark:hover:text-zinc-50">
               Contact
@@ -115,6 +190,72 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="pricing" className="py-24">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+              Pricing
+            </h2>
+            <p className="mt-2 max-w-xl text-zinc-600 dark:text-zinc-400">
+              Starting prices by vehicle size. Final quote depends on window
+              count and film choice.
+            </p>
+            <div className="mt-10 overflow-x-auto rounded-2xl border border-black/[.08] dark:border-white/[.08]">
+              <table className="w-full min-w-[480px] text-left">
+                <thead>
+                  <tr className="border-b border-black/[.08] text-sm text-zinc-500 dark:border-white/[.08] dark:text-zinc-400">
+                    <th className="px-6 py-4 font-medium">Vehicle</th>
+                    <th className="px-6 py-4 font-medium">Carbon</th>
+                    <th className="px-6 py-4 font-medium">Ceramic</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pricing.map((row, i) => (
+                    <tr
+                      key={row.vehicle}
+                      className={
+                        i !== pricing.length - 1
+                          ? "border-b border-black/[.08] dark:border-white/[.08]"
+                          : undefined
+                      }
+                    >
+                      <td className="px-6 py-4 font-medium text-zinc-950 dark:text-zinc-50">
+                        {row.vehicle}
+                      </td>
+                      <td className="px-6 py-4 text-zinc-600 dark:text-zinc-400">
+                        {row.carbon}
+                      </td>
+                      <td className="px-6 py-4 text-zinc-600 dark:text-zinc-400">
+                        {row.ceramic}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="gallery"
+          className="border-t border-black/[.08] bg-white py-24 dark:border-white/[.08] dark:bg-[#0a0a0a]"
+        >
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+              Gallery
+            </h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {gallery.map((caption) => (
+                <div
+                  key={caption}
+                  className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-black/[.15] bg-zinc-100 text-sm text-zinc-500 dark:border-white/[.15] dark:bg-[#141414] dark:text-zinc-400"
+                >
+                  {caption}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="why-us" className="py-24">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
@@ -130,6 +271,68 @@ export default function Home() {
                     {item.description}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="reviews"
+          className="border-t border-black/[.08] bg-white py-24 dark:border-white/[.08] dark:bg-[#0a0a0a]"
+        >
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+                Customer Reviews
+              </h2>
+              <a
+                href="https://www.google.com/search?q=tintman#lrd=review-page"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+              >
+                See all reviews on Google →
+              </a>
+            </div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {reviews.map((review) => (
+                <div
+                  key={review.name}
+                  className="rounded-2xl border border-black/[.08] p-6 dark:border-white/[.08]"
+                >
+                  <span className="text-amber-500" aria-label="5 out of 5 stars">
+                    ★★★★★
+                  </span>
+                  <p className="mt-3 text-zinc-600 dark:text-zinc-400">
+                    &ldquo;{review.quote}&rdquo;
+                  </p>
+                  <p className="mt-4 text-sm font-medium text-zinc-950 dark:text-zinc-50">
+                    {review.name} · {review.vehicle}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="py-24">
+          <div className="mx-auto max-w-6xl px-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+              Frequently Asked Questions
+            </h2>
+            <div className="mt-10 flex max-w-3xl flex-col divide-y divide-black/[.08] dark:divide-white/[.08]">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="group py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between text-base font-medium text-zinc-950 marker:content-none dark:text-zinc-50">
+                    {faq.question}
+                    <span className="ml-4 text-zinc-400 transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                    {faq.answer}
+                  </p>
+                </details>
               ))}
             </div>
           </div>
