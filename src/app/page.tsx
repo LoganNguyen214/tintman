@@ -1,3 +1,5 @@
+import ReviewsCarousel from "@/components/ReviewsCarousel";
+
 const services = [
   {
     title: "Ceramic Window Tint",
@@ -52,25 +54,54 @@ const gallery = [
   "Sedan side profile",
 ];
 
-// Placeholder testimonials — swap for real Google Business Profile reviews.
+// Real reviews from TintMan's public Facebook page, pulled 2026-08-25.
+// Refresh periodically at https://reviews.birdeye.com/tintman-156058046533704
 const reviews = [
   {
-    name: "Jordan M.",
-    vehicle: "Civic",
+    name: "Josh Copeland",
     quote:
-      "Clean install, no bubbles, and they matched the shade I asked for exactly. In and out in an hour.",
+      "Hands down the best around. Scott has been doing my work for 16 years and I don't trust anyone else but him.",
   },
   {
-    name: "Priya S.",
-    vehicle: "RAV4",
+    name: "Johnathan Rhyne",
     quote:
-      "Cabin is noticeably cooler on hot days. Booked online and they got me in the same week.",
+      "Great time management. Up front pricing. Knowledgeable of product. All together great service and great experience. 10/10. Will go back for future tint.",
   },
   {
-    name: "Marcus T.",
-    vehicle: "F-150",
+    name: "Mason Caldwell",
     quote:
-      "Second vehicle I've had done here. Warranty work on my last car was handled with zero hassle.",
+      "Scott has tinted the last two of my vehicles, and his work is great. I wouldn't recommend anyone else to tint my windows!",
+  },
+  {
+    name: "Jay Pearson",
+    quote: "Quality work, great pricing and very professional. Highly recommended.",
+  },
+  {
+    name: "Kerry Marsh",
+    quote:
+      "Highly recommend the Tintman. Always the best professional and friendly atmosphere.",
+  },
+  {
+    name: "Cole Willis Willingham",
+    quote:
+      "Won't go anywhere else! Great service along with a great job! Very pleased with the work!!",
+  },
+  {
+    name: "Clay Coggin",
+    quote: "The best around! Scott will do you right!",
+  },
+  {
+    name: "Jamie Brassfield II",
+    quote: "Best customer service by far and gets the job done! Highly recommend!",
+  },
+  {
+    name: "Matt Thornton",
+    quote: "Best place to get anything tinted EVER! Wouldn't think of going anywhere else.",
+  },
+  {
+    name: "Michael Jones",
+    quote:
+      "Outstanding skill great quality work friendly. I would highly recommend you get all tint work here.",
   },
 ];
 
@@ -286,31 +317,16 @@ export default function Home() {
                 Customer Reviews
               </h2>
               <a
-                href="https://www.google.com/search?q=tintman#lrd=review-page"
+                href="https://reviews.birdeye.com/tintman-156058046533704"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
               >
-                See all reviews on Google →
+                See all reviews →
               </a>
             </div>
-            <div className="mt-10 grid gap-6 sm:grid-cols-3">
-              {reviews.map((review) => (
-                <div
-                  key={review.name}
-                  className="rounded-2xl border border-black/[.08] p-6 dark:border-white/[.08]"
-                >
-                  <span className="text-amber-500" aria-label="5 out of 5 stars">
-                    ★★★★★
-                  </span>
-                  <p className="mt-3 text-zinc-600 dark:text-zinc-400">
-                    &ldquo;{review.quote}&rdquo;
-                  </p>
-                  <p className="mt-4 text-sm font-medium text-zinc-950 dark:text-zinc-50">
-                    {review.name} · {review.vehicle}
-                  </p>
-                </div>
-              ))}
+            <div className="mt-10 mx-auto max-w-2xl">
+              <ReviewsCarousel reviews={reviews} />
             </div>
           </div>
         </section>
@@ -351,10 +367,10 @@ export default function Home() {
               on the spot.
             </p>
             <div className="mt-4 flex flex-col gap-2 text-zinc-950 dark:text-zinc-50">
-              <span className="font-medium">Phone: (555) 123-4567</span>
+              <span className="font-medium">Phone: (662) 401-2207</span>
               <span className="font-medium">Email: hello@tintman.example</span>
               <span className="font-medium">
-                Address: 123 Main St, Your City, ST
+                Address: 148 Co Rd 806, Tupelo, MS 38804
               </span>
             </div>
           </div>
