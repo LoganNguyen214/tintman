@@ -136,36 +136,36 @@ const faqs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col bg-zinc-50 font-sans dark:bg-black">
-      <header className="sticky top-0 z-10 border-b border-black/[.08] bg-white/80 backdrop-blur dark:border-white/[.08] dark:bg-black/80">
+    <div className="flex flex-1 flex-col bg-background font-sans">
+      <header className="sticky top-0 z-10 border-b border-white/[.08] bg-background/80 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <span className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+          <span className="text-lg font-semibold tracking-tight text-foreground">
             TintMan
           </span>
-          <nav className="hidden gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400 lg:flex">
-            <a href="#services" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+          <nav className="hidden gap-6 text-sm font-medium text-muted lg:flex">
+            <a href="#services" className="hover:text-accent">
               Services
             </a>
-            <a href="#pricing" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+            <a href="#pricing" className="hover:text-accent">
               Pricing
             </a>
-            <a href="#gallery" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+            <a href="#gallery" className="hover:text-accent">
               Gallery
             </a>
-            <a href="#reviews" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+            <a href="#reviews" className="hover:text-accent">
               Reviews
             </a>
-            <a href="#faq" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+            <a href="#faq" className="hover:text-accent">
               FAQ
             </a>
-            <a href="#contact" className="hover:text-zinc-950 dark:hover:text-zinc-50">
+            <a href="#contact" className="hover:text-accent">
               Contact
             </a>
           </nav>
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-colors hover:bg-[#383838] sm:inline-flex dark:hover:bg-[#ccc]"
+              className="hidden rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover sm:inline-flex"
             >
               Get a Free Quote
             </a>
@@ -176,49 +176,44 @@ export default function Home() {
 
       <main className="flex flex-1 flex-col">
         <section className="mx-auto flex min-h-[calc(100dvh-4rem)] w-full max-w-6xl flex-col items-start justify-center gap-6 px-6 py-16">
-          <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-5xl">
+          <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
             Keep it cool. Keep it private. Keep it sharp.
           </h1>
-          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-xl text-lg leading-8 text-muted">
             Professional window tinting for cars, trucks, and SUVs. Locally
             owned, lifetime warranty, and most jobs done same day.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
               href="#contact"
-              className="flex h-12 items-center justify-center rounded-full bg-foreground px-6 text-base font-medium text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc]"
+              className="flex h-12 items-center justify-center rounded-full bg-accent px-6 text-base font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
             >
               Get a Free Quote
             </a>
             <a
               href="#services"
-              className="flex h-12 items-center justify-center rounded-full border border-solid border-black/[.08] px-6 text-base font-medium transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
+              className="flex h-12 items-center justify-center rounded-full border border-white/[.145] px-6 text-base font-medium text-foreground transition-colors hover:border-transparent hover:bg-white/[.06]"
             >
               View Services
             </a>
           </div>
         </section>
 
-        <section
-          id="services"
-          className="border-t border-black/[.08] bg-white py-24 dark:border-white/[.08] dark:bg-[#0a0a0a]"
-        >
+        <section id="services" className="border-t border-white/[.08] bg-surface py-24">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
               Services
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className="rounded-2xl border border-black/[.08] p-6 dark:border-white/[.08]"
+                  className="rounded-2xl border border-white/[.08] p-6"
                 >
-                  <h3 className="text-lg font-medium text-zinc-950 dark:text-zinc-50">
+                  <h3 className="text-lg font-medium text-foreground">
                     {service.title}
                   </h3>
-                  <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                    {service.description}
-                  </p>
+                  <p className="mt-2 text-muted">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -227,17 +222,17 @@ export default function Home() {
 
         <section id="pricing" className="py-24">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
               Pricing
             </h2>
-            <p className="mt-2 max-w-xl text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 max-w-xl text-muted">
               Starting prices by vehicle size. Final quote depends on window
               count and film choice.
             </p>
-            <div className="mt-10 overflow-x-auto rounded-2xl border border-black/[.08] dark:border-white/[.08]">
+            <div className="mt-10 overflow-x-auto rounded-2xl border border-white/[.08]">
               <table className="w-full min-w-[480px] text-left">
                 <thead>
-                  <tr className="border-b border-black/[.08] text-sm text-zinc-500 dark:border-white/[.08] dark:text-zinc-400">
+                  <tr className="border-b border-white/[.08] text-sm text-muted">
                     <th className="px-6 py-4 font-medium">Vehicle</th>
                     <th className="px-6 py-4 font-medium">Carbon</th>
                     <th className="px-6 py-4 font-medium">Ceramic</th>
@@ -249,19 +244,15 @@ export default function Home() {
                       key={row.vehicle}
                       className={
                         i !== pricing.length - 1
-                          ? "border-b border-black/[.08] dark:border-white/[.08]"
+                          ? "border-b border-white/[.08]"
                           : undefined
                       }
                     >
-                      <td className="px-6 py-4 font-medium text-zinc-950 dark:text-zinc-50">
+                      <td className="px-6 py-4 font-medium text-foreground">
                         {row.vehicle}
                       </td>
-                      <td className="px-6 py-4 text-zinc-600 dark:text-zinc-400">
-                        {row.carbon}
-                      </td>
-                      <td className="px-6 py-4 text-zinc-600 dark:text-zinc-400">
-                        {row.ceramic}
-                      </td>
+                      <td className="px-6 py-4 text-muted">{row.carbon}</td>
+                      <td className="px-6 py-4 text-muted">{row.ceramic}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -270,19 +261,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="gallery"
-          className="border-t border-black/[.08] bg-white py-24 dark:border-white/[.08] dark:bg-[#0a0a0a]"
-        >
+        <section id="gallery" className="border-t border-white/[.08] bg-surface py-24">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
               Gallery
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {gallery.map((caption) => (
                 <div
                   key={caption}
-                  className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-black/[.15] bg-zinc-100 text-sm text-zinc-500 dark:border-white/[.15] dark:bg-[#141414] dark:text-zinc-400"
+                  className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-white/[.15] bg-background text-sm text-muted"
                 >
                   {caption}
                 </div>
@@ -293,38 +281,33 @@ export default function Home() {
 
         <section id="why-us" className="py-24">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
               Why Choose TintMan
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {whyUs.map((item) => (
                 <div key={item.title}>
-                  <h3 className="text-lg font-medium text-zinc-950 dark:text-zinc-50">
+                  <h3 className="text-lg font-medium text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                    {item.description}
-                  </p>
+                  <p className="mt-2 text-muted">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section
-          id="reviews"
-          className="border-t border-black/[.08] bg-white py-24 dark:border-white/[.08] dark:bg-[#0a0a0a]"
-        >
+        <section id="reviews" className="border-t border-white/[.08] bg-surface py-24">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+              <h2 className="text-2xl font-semibold tracking-tight text-foreground">
                 Customer Reviews
               </h2>
               <a
                 href="https://reviews.birdeye.com/tintman-156058046533704"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                className="text-sm font-medium text-muted hover:text-accent"
               >
                 See all reviews →
               </a>
@@ -337,40 +320,35 @@ export default function Home() {
 
         <section id="faq" className="py-24">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
               Frequently Asked Questions
             </h2>
-            <div className="mt-10 flex max-w-3xl flex-col divide-y divide-black/[.08] dark:divide-white/[.08]">
+            <div className="mt-10 flex max-w-3xl flex-col divide-y divide-white/[.08]">
               {faqs.map((faq) => (
                 <details key={faq.question} className="group py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between text-base font-medium text-zinc-950 marker:content-none dark:text-zinc-50">
+                  <summary className="flex cursor-pointer list-none items-center justify-between text-base font-medium text-foreground marker:content-none">
                     {faq.question}
-                    <span className="ml-4 text-zinc-400 transition-transform group-open:rotate-45">
+                    <span className="ml-4 text-muted transition-transform group-open:rotate-45">
                       +
                     </span>
                   </summary>
-                  <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                    {faq.answer}
-                  </p>
+                  <p className="mt-2 text-muted">{faq.answer}</p>
                 </details>
               ))}
             </div>
           </div>
         </section>
 
-        <section
-          id="contact"
-          className="border-t border-black/[.08] bg-white py-24 dark:border-white/[.08] dark:bg-[#0a0a0a]"
-        >
+        <section id="contact" className="border-t border-white/[.08] bg-surface py-24">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
               Get a Free Quote
             </h2>
-            <p className="max-w-xl text-zinc-600 dark:text-zinc-400">
+            <p className="max-w-xl text-muted">
               Call, text, or stop by the shop and we&apos;ll get you a quote
               on the spot.
             </p>
-            <div className="mt-4 flex flex-col gap-2 text-zinc-950 dark:text-zinc-50">
+            <div className="mt-4 flex flex-col gap-2 text-foreground">
               <span className="font-medium">Phone: (662) 401-2207</span>
               <span className="font-medium">Email: hello@tintman.example</span>
               <span className="font-medium">
@@ -381,8 +359,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-black/[.08] py-8 dark:border-white/[.08]">
-        <div className="mx-auto max-w-6xl px-6 text-sm text-zinc-500 dark:text-zinc-500">
+      <footer className="border-t border-white/[.08] py-8">
+        <div className="mx-auto max-w-6xl px-6 text-sm text-muted">
           © {new Date().getFullYear()} TintMan. All rights reserved.
         </div>
       </footer>

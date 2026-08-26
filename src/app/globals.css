@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
+/* "Carbon & Ember" brand palette — always dark, no light-mode variant. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --surface: #18181b;
+  --foreground: #e4e4e7;
+  --muted: #a1a1aa;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-foreground: #0a0a0a;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

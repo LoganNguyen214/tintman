@@ -41,16 +41,14 @@ export default function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
         role="group"
         aria-roledescription="carousel"
         aria-label="Customer reviews"
-        className="rounded-2xl border border-black/[.08] p-8 dark:border-white/[.08]"
+        className="rounded-2xl border border-white/[.08] p-8"
       >
         <div aria-live="polite" className="min-h-[9rem]">
-          <span className="text-amber-500" aria-label="5 out of 5 stars">
+          <span className="text-accent" aria-label="5 out of 5 stars">
             ★★★★★
           </span>
-          <p className="mt-3 text-lg text-zinc-600 dark:text-zinc-400">
-            &ldquo;{review.quote}&rdquo;
-          </p>
-          <p className="mt-4 text-sm font-medium text-zinc-950 dark:text-zinc-50">
+          <p className="mt-3 text-lg text-muted">&ldquo;{review.quote}&rdquo;</p>
+          <p className="mt-4 text-sm font-medium text-foreground">
             {review.name}
           </p>
         </div>
@@ -61,7 +59,7 @@ export default function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           type="button"
           onClick={prev}
           aria-label="Previous review"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/[.08] text-zinc-600 transition-colors hover:bg-black/[.04] dark:border-white/[.145] dark:text-zinc-400 dark:hover:bg-[#1a1a1a]"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[.145] text-muted transition-colors hover:bg-white/[.06]"
         >
           ←
         </button>
@@ -77,9 +75,7 @@ export default function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
             >
               <span
                 className={`h-2 w-2 rounded-full transition-colors ${
-                  i === index
-                    ? "bg-zinc-950 dark:bg-zinc-50"
-                    : "bg-zinc-300 dark:bg-zinc-700"
+                  i === index ? "bg-accent" : "bg-white/20"
                 }`}
               />
             </button>
@@ -89,7 +85,7 @@ export default function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           type="button"
           onClick={next}
           aria-label="Next review"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/[.08] text-zinc-600 transition-colors hover:bg-black/[.04] dark:border-white/[.145] dark:text-zinc-400 dark:hover:bg-[#1a1a1a]"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[.145] text-muted transition-colors hover:bg-white/[.06]"
         >
           →
         </button>
