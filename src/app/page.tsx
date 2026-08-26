@@ -1,3 +1,4 @@
+import MobileNav from "@/components/MobileNav";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 
 const services = [
@@ -137,7 +138,7 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-zinc-50 font-sans dark:bg-black">
       <header className="sticky top-0 z-10 border-b border-black/[.08] bg-white/80 backdrop-blur dark:border-white/[.08] dark:bg-black/80">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <span className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
             TintMan
           </span>
@@ -161,17 +162,20 @@ export default function Home() {
               Contact
             </a>
           </nav>
-          <a
-            href="#contact"
-            className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc]"
-          >
-            Get a Free Quote
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="#contact"
+              className="hidden rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-colors hover:bg-[#383838] sm:inline-flex dark:hover:bg-[#ccc]"
+            >
+              Get a Free Quote
+            </a>
+            <MobileNav />
+          </div>
         </div>
       </header>
 
       <main className="flex flex-1 flex-col">
-        <section className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-24 sm:py-32">
+        <section className="mx-auto flex min-h-[calc(100dvh-4rem)] w-full max-w-6xl flex-col items-start justify-center gap-6 px-6 py-16">
           <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-5xl">
             Keep it cool. Keep it private. Keep it sharp.
           </h1>

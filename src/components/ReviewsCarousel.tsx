@@ -61,11 +61,11 @@ export default function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           type="button"
           onClick={prev}
           aria-label="Previous review"
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-black/[.08] text-zinc-600 transition-colors hover:bg-black/[.04] dark:border-white/[.145] dark:text-zinc-400 dark:hover:bg-[#1a1a1a]"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/[.08] text-zinc-600 transition-colors hover:bg-black/[.04] dark:border-white/[.145] dark:text-zinc-400 dark:hover:bg-[#1a1a1a]"
         >
           ←
         </button>
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           {reviews.map((r, i) => (
             <button
               key={r.name}
@@ -73,19 +73,23 @@ export default function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
               onClick={() => setIndex(i)}
               aria-label={`Go to review ${i + 1} of ${reviews.length}`}
               aria-current={i === index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                i === index
-                  ? "bg-zinc-950 dark:bg-zinc-50"
-                  : "bg-zinc-300 dark:bg-zinc-700"
-              }`}
-            />
+              className="flex h-8 w-6 items-center justify-center"
+            >
+              <span
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  i === index
+                    ? "bg-zinc-950 dark:bg-zinc-50"
+                    : "bg-zinc-300 dark:bg-zinc-700"
+                }`}
+              />
+            </button>
           ))}
         </div>
         <button
           type="button"
           onClick={next}
           aria-label="Next review"
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-black/[.08] text-zinc-600 transition-colors hover:bg-black/[.04] dark:border-white/[.145] dark:text-zinc-400 dark:hover:bg-[#1a1a1a]"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/[.08] text-zinc-600 transition-colors hover:bg-black/[.04] dark:border-white/[.145] dark:text-zinc-400 dark:hover:bg-[#1a1a1a]"
         >
           →
         </button>
