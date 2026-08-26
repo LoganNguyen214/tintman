@@ -8,6 +8,8 @@ const basePath = process.env.GITHUB_PAGES_BASE_PATH ?? "";
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
+  // Static export has no server to run Next's Image Optimization API.
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

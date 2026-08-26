@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* "Carbon & Ember" brand palette — always dark, no light-mode variant. */
+/* "Carbon & Chrome" brand palette — always dark, no light-mode variant. */
 :root {
   --background: #0a0a0a;
   --surface: #18181b;
   --foreground: #e4e4e7;
   --muted: #a1a1aa;
-  --accent: #f59e0b;
-  --accent-hover: #d97706;
+  --accent: #f4f4f5;
+  --accent-hover: #d4d4d8;
   --accent-foreground: #0a0a0a;
 }
 

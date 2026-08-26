@@ -1,5 +1,11 @@
+import Image from "next/image";
+
 import MobileNav from "@/components/MobileNav";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
+
+// Same basePath env var next.config.ts uses — needed here too since
+// images.unoptimized skips Next's automatic basePath rewriting for <Image>.
+const basePath = process.env.GITHUB_PAGES_BASE_PATH ?? "";
 
 const services = [
   {
@@ -175,27 +181,40 @@ export default function Home() {
       </header>
 
       <main className="flex flex-1 flex-col">
-        <section className="mx-auto flex min-h-[calc(100dvh-4rem)] w-full max-w-6xl flex-col items-start justify-center gap-6 px-6 py-16">
-          <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-            Keep it cool. Keep it private. Keep it sharp.
-          </h1>
-          <p className="max-w-xl text-lg leading-8 text-muted">
-            Professional window tinting for cars, trucks, and SUVs. Locally
-            owned, lifetime warranty, and most jobs done same day.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#contact"
-              className="flex h-12 items-center justify-center rounded-full bg-accent px-6 text-base font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
-            >
-              Get a Free Quote
-            </a>
-            <a
-              href="#services"
-              className="flex h-12 items-center justify-center rounded-full border border-white/[.145] px-6 text-base font-medium text-foreground transition-colors hover:border-transparent hover:bg-white/[.06]"
-            >
-              View Services
-            </a>
+        <section className="relative flex min-h-[calc(100dvh-4rem)] w-full flex-col overflow-hidden">
+          <Image
+            src={`${basePath}/images/hero-truck.jpg`}
+            alt="Black lifted Ford F-150 pickup truck at sunset"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+
+          <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col items-start justify-center gap-6 px-6 py-16">
+            <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
+              Keep it cool. Keep it private. Keep it sharp.
+            </h1>
+            <p className="max-w-xl text-lg leading-8 text-muted">
+              Professional window tinting for cars, trucks, and SUVs. Locally
+              owned, lifetime warranty, and most jobs done same day.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#contact"
+                className="flex h-12 items-center justify-center rounded-full bg-accent px-6 text-base font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
+              >
+                Get a Free Quote
+              </a>
+              <a
+                href="#services"
+                className="flex h-12 items-center justify-center rounded-full border border-white/[.3] px-6 text-base font-medium text-foreground transition-colors hover:border-transparent hover:bg-white/[.1]"
+              >
+                View Services
+              </a>
+            </div>
           </div>
         </section>
 
